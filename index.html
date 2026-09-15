@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Andrés Arancibia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navegación -->
+    <header class="navbar">
+        <div class="logo">&lt;ANDRÉS ARANCIBIA | TÉCNICO PROGRAMADOR/&gt;</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </header>
+
+
+    <section id="inicio" class="hero hidden">
+        <div class="hero-image">
+            <img src="assets/foto-perfil.jpg" alt="Andrés Arancibia">
+        </div>
+        <div class="hero-content">
+            <h1>Hola, soy <span>Carlos Andrés Arancibia Diaz</span></h1>
+            <h2>Tecnico Programador | Desarrollador Full Stack</h2>
+            <p>Apasionado por el desarrollo backend, administracion y optimizacion de base de datos, desarrollo
+                optimizado de algoritmos</p>
+            <div class="hero-buttons">
+                <a href="#proyectos" class="btn primary">Ver mis proyectos</a>
+                <a href="assets/CVAnd26DevUnsa.pdf" class="btn secondary" target="_blank">Descargar CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="about hidden">
+        <h2>Sobre Mí</h2>
+        <div class="about-container">
+            <p>Desarrollador backend y finalista sudamericano del ICPC. Combino una sólida base
+                algorítmica con la capacidad de adaptarme a cualquier lenguaje de programación.
+                Apasionado por la arquitectura de sistemas, el aprendizaje continuo y el crecimiento
+                profesional.</p>
+
+            <div class="skills">
+                <h3>Tecnologías que manejo:</h3>
+                <div class="skill-tags">
+                    <span>Java</span>
+                    <span>Javascript/Typescript</span>
+                    <span>PHP</span>
+                    <span>Python</span>
+                    <span>Docker</span>
+                    <span>Flutter</span>
+                    <span>HTML/CSS</span>
+                    <span>Linux</span>
+                    <span>Laravel</span>
+                    <span>Spring/Spring-boot</span>
+                    <span>React</span>
+                    <span>Angular</span>
+                    <span>Git/Git-hub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Carrusel (Galería o Tecnologías) -->
+    <section id="galeria" class="carousel-section hidden">
+        <h2>Logros académicos, titulos y diplomas: </h2>
+
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="carousel-group">
+                    <div class="slide"><img src="assets/certificado01.jpg" alt="Foto 1"></div>
+                    <div class="slide"><img src="assets/certificado02.jpg" alt="Foto 2"></div>
+                    <div class="slide"><img src="assets/certificado03.jpg" alt="Foto 3"></div>
+                    <div class="slide"><img src="assets/certificado04.jpg" alt="Foto 4"></div>
+                    <div class="slide"><img src="assets/certificado05.jpg" alt="Foto 5"></div>
+                    <div class="slide"><img src="assets/certificado06.jpg" alt="Foto 6"></div>
+                    <div class="slide"><img src="assets/certificado07.jpg" alt="Foto 7"></div>
+
+                </div>
+
+                <div class="carousel-group" aria-hidden="true">
+                    <div class="slide"><img src="assets/certificado01.jpg" alt="Foto 1"></div>
+                    <div class="slide"><img src="assets/certificado02.jpg" alt="Foto 2"></div>
+                    <div class="slide"><img src="assets/certificado03.jpg" alt="Foto 3"></div>
+                    <div class="slide"><img src="assets/certificado04.jpg" alt="Foto 4"></div>
+                    <div class="slide"><img src="assets/certificado05.jpg" alt="Foto 5"></div>
+                    <div class="slide"><img src="assets/certificado06.jpg" alt="Foto 6"></div>
+                    <div class="slide"><img src="assets/certificado07.jpg" alt="Foto 7"></div>
+
+                </div>
+            </div>
+    </section>
+
+    <!--SECCION DE PROYECTOS-->
+    <section id="proyectos" class="projects hidden">
+        <h2>Mis Proyectos</h2>
+        <div class="project-grid">
+
+            <article class="project-card">
+                <div class="project-img">
+                    <img src="assets/projects/project-01/dartelink01.png" alt="Vista previa del proyecto">
+                </div>
+                <div class="project-info">
+                    <h3>Mantenimiento a la página DARTELINK</h3>
+                    <p>Mantenimiento correctivo y preventivo a la pagina web dartelin.com.ar</p>
+                    <div class="tech-stack">
+                        <span>HTML</span><span>PHP</span><span>MySQL</span><span>CSS</span><span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <!--a href="[Enlace_GitHub]" target="_blank" class="btn-sm">Código</a--->
+                        <a href="https://www.dartelink.com.ar/" target="_blank" class="btn-sm outline">Ir a Dartelink</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-img">
+                    <img src="https://via.placeholder.com/600x350" alt="Vista previa del proyecto">
+                </div>
+                <div class="project-info">
+                    <h3>[Nombre del Proyecto 2]</h3>
+                    <p>[Breve descripción del proyecto. Puedes duplicar estas tarjetas según necesites.]</p>
+                    <div class="tech-stack">
+                        <span>[Tech]</span><span>[Tech]</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="[Enlace_GitHub]" target="_blank" class="btn-sm">Código</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contact hidden">
+        <h2>Ponte en contacto</h2>
+        <div class="form">
+            <form id="contact-form" class="contact-form" method="post" autocomplete="off">
+                <!-- h3>Contacto</h3 -->
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required maxlength="60">
+
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required maxlength="80">
+
+                <label for="subject">Asunto</label>
+                <input type="text" id="subject" name="subject" required maxlength="100">
+
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="5" required maxlength="1000"></textarea>
+
+                <p id="error"></p>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <p>¿Estás buscando nuevas oportunidades, colaboraciones o simplemente charlar de código? Déjame un mensaje.
+        </p>
+        <div class="contact-links">
+            <a href="mailto:arancibiaandres625@gmail.com" class="btn primary">Envíame un correo</a>
+            <a href="https://www.linkedin.com/in/andres25ar/" target="_blank" class="btn secondary">LinkedIn</a>
+            <a href="https://github.com/Andres25ar" target="_blank" class="btn secondary">GitHub</a>
+        </div>
+    </section>
+
+    <!--MODAL DE IMAGENES-->
+    <div id="image-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <span class="nav-modal prev-modal">&#10094;</span>
+        <img class="modal-content" id="modal-img" alt="Vista previa">
+        <span class="nav-modal next-modal">&#10095;</span>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Andrés Arancibia. Construido con HTML, CSS y JS.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("ULsHKuP-00IhSyfJb");
+        })();
+    </script>
+</body>
+
+</html>
