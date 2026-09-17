@@ -205,4 +205,32 @@ document.addEventListener('DOMContentLoaded', () => {
         return regexEmail.test(email);
     }
 
+    // --- LÓGICA DE TECNOLOGÍAS ---
+    const skillDropdowns = document.querySelectorAll('.skill-dropdown');
+
+    skillDropdowns.forEach(dropdown => {
+        const btn = dropdown.querySelector('.skill-dropbtn');
+        
+        btn.addEventListener('click', (e) => {
+            // Evita que el clic se propague al documento y cierre el menú inmediatamente
+            e.stopPropagation(); 
+            const isAlreadyActive = dropdown.classList.contains('active');
+            skillDropdowns.forEach(d => d.classList.remove('active'));
+            if (!isAlreadyActive) {
+                dropdown.classList.add('active');
+            }
+        });
+    });
+
+    // Cerrar el menú desplegable si el usuario hace clic en cualquier otra parte de la página
+    document.addEventListener('click', () => {
+        skillDropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+    });
+    const skillContents = document.querySelectorAll('.skill-dropdown-content');
+    skillContents.forEach(content => {
+        content.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    });
+
 });

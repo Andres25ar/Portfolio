@@ -211,24 +211,125 @@ section {
     text-align: center;
 }
 
-.skill-tags {
+#sobre-mi {
+    position: relative;
+    z-index: 10;
+}
+
+/* ---TECNOLOGIAS--- */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem auto 0;
+    max-width: 800px;
+}
+
+.skill-dropdown {
+    position: relative;
+    flex: 1 1 calc(33.333% - 1rem);
+    min-width: 220px;
+    display: flex;
+}
+
+/*categorias botones*/
+.skill-dropbtn {
+    background: #10b981;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+
+.skill-dropbtn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.skill-dropbtn .arrow {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-dropdown.active .skill-dropbtn .arrow {
+    transform: rotate(180deg);
+}
+
+/*lista desplegable*/
+.skill-dropdown-content {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8); 
+
+    width: max-content; 
+    max-width: 300px;
+
     display: flex;
     flex-wrap: wrap;
+    gap: 0.6rem;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
+
+    /* mantener oculto*/
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
 }
 
-.skill-tags span {
-    background: var(--secondary-bg);
-    padding: 0.5rem 1rem;
+.skill-dropdown-content::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 14px;
+    height: 14px;
+    background: #ffffff;
+}
+
+/*hovver*/
+.skill-dropdown.active .skill-dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.skill-dropdown-content span {
+    background: #e0f2fe; 
+    color: #0369a1;
+    padding: 0.4rem 0.8rem;
     border-radius: 20px;
-    font-size: 0.9rem;
-    color: var(--accent-color);
-    border: 1px solid rgba(16, 185, 129, 0.2);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid #bae6fd;
+    transition: all 0.2s ease;
 }
 
-/* Proyectos */
+.skill-dropdown-content span:hover {
+    background: #3b82f6;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/*--- PROYECTOS ---*/
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -479,10 +580,11 @@ footer {
 
 /* --- FORMULARIO --- */
 .contact h2 {
-    margin-bottom: 0.5rem; /* Sobrescribe los 3rem globales del h2 */
+    margin-bottom: 0.5rem;
+    /* Sobrescribe los 3rem globales del h2 */
 }
 
-.form{
+.form {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -538,7 +640,7 @@ footer {
     box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
 }
 
-.contact-form textarea{
+.contact-form textarea {
     resize: none;
 }
 
@@ -685,13 +787,62 @@ footer {
     .contact-form {
         padding: 1rem 0.8rem;
     }
-    
+
     .contact-form input,
-    .contact-form textarea{
+    .contact-form textarea {
         padding: 0.5rem 0.7rem;
     }
 
     .contact-form button {
         padding: 0.8rem;
+    }
+
+    /*--- TECNOLOGIAS ---*/
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .skill-dropdown {
+        width: 85%;
+        min-width: unset;
+        flex-direction: column;
+    }
+
+    .skill-dropbtn {
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .skill-dropdown-content {
+        position: static;
+        transform: none;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0.5rem auto 0;
+        box-shadow: none;
+        /*fondo blanco suave*/
+        background: #f8fafc; 
+        
+        display: none; 
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .skill-dropdown-content::before {
+        display: none; 
+    }
+
+    /* Mostrar acordeón en móvil al añadir clase active */
+    .skill-dropdown.active .skill-dropdown-content {
+        display: flex;
+        animation: fadeIn 0.3s ease-in-out;
+        transform: none;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 }
