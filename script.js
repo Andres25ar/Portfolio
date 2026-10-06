@@ -233,4 +233,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Efecto de tecleo en el h2 del hero ---
+    const heroH2 = document.querySelector('.hero-content h2');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (heroH2 && !reducedMotion) {
+        const fullText = heroH2.textContent;
+
+        // Un <span> por carácter con visibility:hidden:
+        // el texto ocupa su espacio desde el inicio (sin reflow al teclear)
+        const charSpans = fullText.split('').map(char => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            span.style.visibility = 'hidden';
+            return span;
+        });
+
+        // Vaciar el h2 solo cuando los spans ya están preparados:
+        // si algo falla antes, el texto original queda visible
+        heroH2.textContent = '';
+        charSpans.forEach(span => heroH2.appendChild(span));
+
+        // El tecleo arranca cuando el hero termina de aparecer (fade de 0.8s)
+        setTimeout(function startTyping() {
+            let i = 0;
+            const typing = setInterval(() => {
+                if (i >= charSpans.length) {
+                    clearInterval(typing);
+                    // Pausa de 7.5s con el cursor parpadeando y luego se reinicia
+                    setTimeout(() => {
+                        charSpans[charSpans.length - 1].classList.remove('cursor');
+                        charSpans.forEach(span => span.style.visibility = 'hidden');
+                        startTyping();
+                    }, 7500);
+                    return;
+                }
+                if (i > 0) charSpans[i - 1].classList.remove('cursor');
+                charSpans[i].style.visibility = 'visible';
+                charSpans[i].classList.add('cursor');
+                i++;
+            }, 60); // ~60 ms por letra
+        }, 1100); // espera al fade-in del hero + margen
+    }
+
 });

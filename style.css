@@ -175,6 +175,19 @@ section {
     margin-bottom: 1.5rem;
 }
 
+/* Cursor del efecto de tecleo (script.js) */
+.hero-content h2 .cursor::after {
+    content: "▌";
+    color: var(--primary-color);
+    animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
